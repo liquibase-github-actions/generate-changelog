@@ -14,22 +14,45 @@ service GenerateChangelogService {
 
 /* Generate a changelog */
 message GenerateChangelogRequest {
-  string changelog_file = 1; // *required* File to write changelog to
-  optional string data_output_directory = 2; // Directory to write table data to
-  optional string diff_types = 3; // Types of objects to compare
-  optional string driver = 4; // The JDBC driver class
-  optional string driver_properties_file = 5; // The JDBC driver properties file
-  optional string exclude_objects = 6; // Objects to exclude from diff
-  optional bool include_catalog = 7; // If true, the catalog will be included in generated changeSets
-  optional string include_objects = 8; // Objects to include in diff
-  optional bool include_schema = 9; // If true, the schema will be included in generated changeSets
-  optional string include_tablespace = 10; // Include the tablespace attribute in the changelog
-  optional string overwrite_output_file = 11; // Flag to allow overwriting of output changelog file
-  optional string password = 12; // Password to use to connect to the database
-  optional string schemas = 13; // Schemas to include in diff
-  string url = 14; // *required* The JDBC database connection URL
-  optional string username = 15; // Username to use to connect to the database
-  liquibase.GlobalOptions global_options = 16;
+  optional string author = 1;
+  optional string changelog_file = 2; // Changelog file to write results
+  optional string compare_control = 3;
+  optional string context = 4;
+  optional string data_output_directory = 5; // Directory to write table data to
+  optional string database = 6;
+  optional string default_catalog_name = 7; // The default catalog name to use for the database connection
+  optional string default_schema_name = 8; // The default schema name to use for the database connection
+  optional string diff_types = 9; // Types of objects to compare
+  optional string driver = 10; // The JDBC driver class
+  optional string driver_properties_file = 11; // The JDBC driver properties file
+  optional string exclude_objects = 12; // Objects to exclude from diff
+  optional string format = 13; // Output format. Default: TXT
+  optional bool include_catalog = 14; // If true, the catalog will be included in generated changeSets. Defaults to false.
+  optional string include_objects = 15; // Objects to include in diff
+  optional bool include_schema = 16; // If true, the schema will be included in generated changeSets. Defaults to false.
+  optional bool include_tablespace = 17; // Include the tablespace attribute in the changelog. Defaults to false.
+  optional string object_change_filter = 18;
+  optional string output_schemas = 19; // Output schemas names. This is a CSV list.
+  optional bool overwrite_output_file = 20; // Flag to allow overwriting of output changelog file. Default: false
+  optional string password = 21; // Password to use to connect to the database
+  optional string reference_database = 22;
+  optional string reference_default_catalog_name = 23;
+  optional string reference_default_schema_name = 24;
+  optional string reference_driver = 25;
+  optional string reference_driver_properties_file = 26;
+  optional string reference_password = 27;
+  optional string reference_schemas = 28;
+  optional string reference_snapshot_control = 29;
+  optional string reference_url = 30;
+  optional string reference_username = 31;
+  optional string schemas = 32; // Schemas to include in diff
+  optional bool skip_database_step = 33;
+  optional string snapshot_listener = 34;
+  optional string snapshot_types = 35;
+  optional string target_snapshot_control = 36;
+  string url = 37; // *required* The JDBC database connection URL
+  optional string username = 38; // Username to use to connect to the database
+  liquibase.GlobalOptions global_options = 39;
 }
 
 message Response {
