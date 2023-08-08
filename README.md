@@ -13,7 +13,7 @@ steps:
     # Required
     url: ""
 
-    # 
+    # Specifies the author for changesets in the generated changelog
     # string
     # Optional
     author: ""
@@ -23,25 +23,10 @@ steps:
     # Optional
     changelogFile: ""
 
-    # 
-    # string
-    # Optional
-    compareControl: ""
-
-    # 
-    # string
-    # Optional
-    context: ""
-
     # Directory to write table data to
     # string
     # Optional
     dataOutputDirectory: ""
-
-    # 
-    # string
-    # Optional
-    database: ""
 
     # The default catalog name to use for the database connection
     # string
@@ -73,11 +58,6 @@ steps:
     # Optional
     excludeObjects: ""
 
-    # Output format. Default: TXT
-    # string
-    # Optional
-    format: ""
-
     # If true, the catalog will be included in generated changeSets. Defaults to false.
     # bool
     # Optional
@@ -98,11 +78,6 @@ steps:
     # Optional
     includeTablespace: ""
 
-    # 
-    # string
-    # Optional
-    objectChangeFilter: ""
-
     # Output schemas names. This is a CSV list.
     # string
     # Optional
@@ -118,80 +93,10 @@ steps:
     # Optional
     password: ""
 
-    # 
-    # string
-    # Optional
-    referenceDatabase: ""
-
-    # 
-    # string
-    # Optional
-    referenceDefaultCatalogName: ""
-
-    # 
-    # string
-    # Optional
-    referenceDefaultSchemaName: ""
-
-    # 
-    # string
-    # Optional
-    referenceDriver: ""
-
-    # 
-    # string
-    # Optional
-    referenceDriverPropertiesFile: ""
-
-    # 
-    # string
-    # Optional
-    referencePassword: ""
-
-    # 
-    # string
-    # Optional
-    referenceSchemas: ""
-
-    # 
-    # string
-    # Optional
-    referenceSnapshotControl: ""
-
-    # 
-    # string
-    # Optional
-    referenceUrl: ""
-
-    # 
-    # string
-    # Optional
-    referenceUsername: ""
-
     # Schemas to include in diff
     # string
     # Optional
     schemas: ""
-
-    # 
-    # bool
-    # Optional
-    skipDatabaseStep: ""
-
-    # 
-    # string
-    # Optional
-    snapshotListener: ""
-
-    # 
-    # string
-    # Optional
-    snapshotTypes: ""
-
-    # 
-    # string
-    # Optional
-    targetSnapshotControl: ""
 
     # Username to use to connect to the database
     # string
