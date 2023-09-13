@@ -6,7 +6,7 @@ Generate a changelog
 ```yaml
 steps:
 - uses: actions/checkout@v3
-- uses: liquibase-github-actions/generate-changelog@v4.23.1
+- uses: liquibase-github-actions/generate-changelog@v4.23.2
   with:
     # The JDBC database connection URL
     # string
@@ -115,7 +115,7 @@ The liquibase generate changelog action accepts all valid liquibase global optio
 ```yaml
 steps:
   - uses: actions/checkout@v3
-  - uses: liquibase-github-actions/generate-changelog@v4.23.1
+  - uses: liquibase-github-actions/generate-changelog@v4.23.2
     with:
       url: ""
       headless: true
