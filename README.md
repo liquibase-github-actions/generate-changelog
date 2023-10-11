@@ -6,7 +6,7 @@ Generate a changelog
 ```yaml
 steps:
 - uses: actions/checkout@v3
-- uses: liquibase-github-actions/generate-changelog@v4.23.2
+- uses: liquibase-github-actions/generate-changelog@v4.24.0
   with:
     # The JDBC database connection URL
     # string
@@ -22,6 +22,11 @@ steps:
     # string
     # Optional
     changelogFile: ""
+
+    # Changeset contexts to generate
+    # string
+    # Optional
+    contextFilter: ""
 
     # Directory to write table data to
     # string
@@ -78,6 +83,11 @@ steps:
     # Optional
     includeTablespace: ""
 
+    # Changeset labels to generate
+    # string
+    # Optional
+    labelFilter: ""
+
     # Output schemas names. This is a CSV list.
     # string
     # Optional
@@ -115,7 +125,7 @@ The liquibase generate changelog action accepts all valid liquibase global optio
 ```yaml
 steps:
   - uses: actions/checkout@v3
-  - uses: liquibase-github-actions/generate-changelog@v4.23.2
+  - uses: liquibase-github-actions/generate-changelog@v4.24.0
     with:
       url: ""
       headless: true
