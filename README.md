@@ -6,7 +6,7 @@ Generate a changelog
 ```yaml
 steps:
 - uses: actions/checkout@v3
-- uses: liquibase-github-actions/generate-changelog@v4.25.1
+- uses: liquibase-github-actions/generate-changelog@v4.26.0
   with:
     # The JDBC database connection URL
     # string
@@ -103,10 +103,25 @@ steps:
     # Optional
     password: ""
 
+    # Sets replaceIfExists="true" for changes of these types (supported types: createFunction, createPackage, createPackageBody, createProcedure, createTrigger, createView)
+    # string
+    # Optional
+    replaceIfExistsTypes: ""
+
+    # Sets runOnChange="true" for changesets containing solely changes of these types (e. g. createView, createProcedure, ...).
+    # string
+    # Optional
+    runOnChangeTypes: ""
+
     # Schemas to include in diff
     # string
     # Optional
     schemas: ""
+
+    # If true, will add "OR REPLACE" option to the create view change object
+    # bool
+    # Optional
+    useOrReplaceOption: ""
 
     # Username to use to connect to the database
     # string
@@ -125,7 +140,7 @@ The liquibase generate changelog action accepts all valid liquibase global optio
 ```yaml
 steps:
   - uses: actions/checkout@v3
-  - uses: liquibase-github-actions/generate-changelog@v4.25.1
+  - uses: liquibase-github-actions/generate-changelog@v4.26.0
     with:
       url: ""
       headless: true

@@ -32,10 +32,13 @@ message GenerateChangelogRequest {
   optional string output_schemas = 16; // Output schemas names. This is a CSV list.
   optional bool overwrite_output_file = 17; // Flag to allow overwriting of output changelog file. Default: false
   optional string password = 18; // Password to use to connect to the database
-  optional string schemas = 19; // Schemas to include in diff
-  string url = 20; // *required* The JDBC database connection URL
-  optional string username = 21; // Username to use to connect to the database
-  liquibase.GlobalOptions global_options = 22;
+  optional string replace_if_exists_types = 19; // Sets replaceIfExists="true" for changes of these types (supported types: createFunction, createPackage, createPackageBody, createProcedure, createTrigger, createView)
+  optional string run_on_change_types = 20; // Sets runOnChange="true" for changesets containing solely changes of these types (e. g. createView, createProcedure, ...).
+  optional string schemas = 21; // Schemas to include in diff
+  string url = 22; // *required* The JDBC database connection URL
+  optional bool use_or_replace_option = 23; // If true, will add 'OR REPLACE' option to the create view change object
+  optional string username = 24; // Username to use to connect to the database
+  liquibase.GlobalOptions global_options = 25;
 }
 
 message Response {
