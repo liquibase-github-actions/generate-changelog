@@ -35,10 +35,11 @@ message GenerateChangelogRequest {
   optional string replace_if_exists_types = 19; // Sets replaceIfExists="true" for changes of these types (supported types: createFunction, createPackage, createPackageBody, createProcedure, createTrigger, createView)
   optional string run_on_change_types = 20; // Sets runOnChange="true" for changesets containing solely changes of these types (e. g. createView, createProcedure, ...).
   optional string schemas = 21; // Schemas to include in diff
-  string url = 22; // *required* The JDBC database connection URL
-  optional bool use_or_replace_option = 23; // If true, will add 'OR REPLACE' option to the create view change object
-  optional string username = 24; // Username to use to connect to the database
-  liquibase.GlobalOptions global_options = 25;
+  optional bool skip_object_sorting = 22; // When true will skip object sorting. This can be useful on databases that have a lot of packages/procedures that are linked to each other
+  string url = 23; // *required* The JDBC database connection URL
+  optional bool use_or_replace_option = 24; // If true, will add 'OR REPLACE' option to the create view change object
+  optional string username = 25; // Username to use to connect to the database
+  liquibase.GlobalOptions global_options = 26;
 }
 
 message Response {

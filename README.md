@@ -6,7 +6,7 @@ Generate a changelog
 ```yaml
 steps:
 - uses: actions/checkout@v3
-- uses: liquibase-github-actions/generate-changelog@v4.26.0
+- uses: liquibase-github-actions/generate-changelog@v4.27.0
   with:
     # The JDBC database connection URL
     # string
@@ -118,6 +118,11 @@ steps:
     # Optional
     schemas: ""
 
+    # When true will skip object sorting. This can be useful on databases that have a lot of packages/procedures that are linked to each other
+    # bool
+    # Optional
+    skipObjectSorting: ""
+
     # If true, will add "OR REPLACE" option to the create view change object
     # bool
     # Optional
@@ -140,7 +145,7 @@ The liquibase generate changelog action accepts all valid liquibase global optio
 ```yaml
 steps:
   - uses: actions/checkout@v3
-  - uses: liquibase-github-actions/generate-changelog@v4.26.0
+  - uses: liquibase-github-actions/generate-changelog@v4.27.0
     with:
       url: ""
       headless: true
