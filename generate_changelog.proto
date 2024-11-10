@@ -32,7 +32,7 @@ message GenerateChangelogRequest {
   optional string output_schemas = 16; // Output schemas names. This is a CSV list.
   optional bool overwrite_output_file = 17; // Flag to allow overwriting of output changelog file. Default: false
   optional string password = 18; // Password to use to connect to the database
-  optional string replace_if_exists_types = 19; // Sets replaceIfExists="true" for changes of these types (supported types: createFunction, createPackage, createPackageBody, createProcedure, createTrigger, createView)
+  optional string replace_if_exists_types = 19; // Sets replaceIfExists="true" for changes of these types (supported types: createProcedure, createView)
   optional string run_on_change_types = 20; // Sets runOnChange="true" for changesets containing solely changes of these types (e. g. createView, createProcedure, ...).
   optional string schemas = 21; // Schemas to include in diff
   optional bool skip_object_sorting = 22; // When true will skip object sorting. This can be useful on databases that have a lot of packages/procedures that are linked to each other
