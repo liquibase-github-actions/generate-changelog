@@ -23,9 +23,9 @@ message GenerateChangelogRequest {
   optional string diff_types = 7; // Types of objects to compare
   optional string driver = 8; // The JDBC driver class
   optional string driver_properties_file = 9; // The JDBC driver properties file
-  optional string exclude_objects = 10; // Objects to exclude from diff
+  optional string exclude_objects = 10; // Objects to exclude from diff. Supports regular expressions. Defaults to null.
   optional bool include_catalog = 11; // If true, the catalog will be included in generated changeSets. Defaults to false.
-  optional string include_objects = 12; // Objects to include in diff
+  optional string include_objects = 12; // Objects to include in diff. Supports regular expressions. Defaults to null.
   optional bool include_schema = 13; // If true, the schema will be included in generated changeSets. Defaults to false.
   optional bool include_tablespace = 14; // Include the tablespace attribute in the changelog. Defaults to false.
   optional string label_filter = 15; // Changeset labels to generate
