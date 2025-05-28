@@ -6,7 +6,7 @@ Generate a changelog
 ```yaml
 steps:
 - uses: actions/checkout@v3
-- uses: liquibase-github-actions/generate-changelog@v4.31.1
+- uses: liquibase-github-actions/generate-changelog@v4.32.0
   with:
     # The JDBC database connection URL
     # string
@@ -28,7 +28,7 @@ steps:
     # Optional
     contextFilter: ""
 
-    # Directory to write table data to
+    # Specifies a directory to send the loadData output of a diff-changelog/generate-changelog command as a CSV file.
     # string
     # Optional
     dataOutputDirectory: ""
@@ -62,6 +62,11 @@ steps:
     # string
     # Optional
     excludeObjects: ""
+
+    # If true, diff operations will ignore referenced objects which are not found in a snapshot.
+    # bool
+    # Optional
+    ignoreMissingReferences: ""
 
     # If true, the catalog will be included in generated changeSets. Defaults to false.
     # bool
@@ -145,7 +150,7 @@ The liquibase generate changelog action accepts all valid liquibase global optio
 ```yaml
 steps:
   - uses: actions/checkout@v3
-  - uses: liquibase-github-actions/generate-changelog@v4.31.1
+  - uses: liquibase-github-actions/generate-changelog@v4.32.0
     with:
       url: ""
       headless: true
